@@ -1,0 +1,77 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sontan="http://schemas.android.com/apk/res/cc.joysing.uav"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/background"
+    tools:context=".MainActivity" >
+
+    <cc.joysing.uav.view.SwitcherView
+        android:id="@+id/switcherView1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        sontan:slide_button="@drawable/slide_button"
+        sontan:switch_background="@drawable/switch_background"
+        sontan:switch_state="false" />
+
+    <cc.joysing.uav.view.RockerView
+        android:id="@+id/rockerView_left"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        sontan:areaBackground="@drawable/default_area_bg"
+        sontan:rockerBackground="@drawable/default_rocker"
+        android:visibility="invisible"
+        sontan:rockerRadius="30dp" />  
+
+    <Button
+        android:id="@+id/btn_connect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="#fff"
+        android:background="@drawable/button_bg_red"
+        android:text="未连接" />
+
+    <cc.joysing.uav.view.VerticalSeekBar
+        android:id="@+id/vertical_Seekbar"
+        android:layout_width="50dip"
+        android:layout_height="450dip"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/btn_stay"
+        android:max="1000"
+        android:maxWidth="10dp"
+        android:progress="0"
+        android:progressDrawable="@drawable/seekbar_bg"
+        android:thumb="@drawable/slide_button" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btn_connect"
+        android:layout_alignBottom="@+id/btn_connect"
+        android:layout_marginRight="28dp"
+        android:layout_toLeftOf="@+id/btn_stay"
+        android:text="当前速度：0"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/btn_stay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/button_bg_gray"
+        android:text="悬停"
+        android:textColor="#fff" />
+
+</RelativeLayout>
